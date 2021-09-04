@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sw.bbs.mappers.IBoardMapper">
+    <select id="selectBoard" parameterType="com.sw.bbs.interfaces.IBoard" resultType="com.sw.bbs.entity.BoardEntity">
+        SELECT `code`                   AS `code`,
+               `name`                   AS `name`,
+               `read_forbidden_flag`    AS `isReadForbidden`,
+               `write_forbidden_flag`   AS `isWriteForbidden`,
+               `comment_forbidden_flag` AS `CommentForbidden`
+        FROM `bbs_test`.`boards`
+        WHERE `code` = {boardCode}
+    </select>
+</mapper>    
