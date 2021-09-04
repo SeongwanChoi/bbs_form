@@ -16,6 +16,8 @@ public class BoardService {
     }
 
     public void list(ListVo listVo) {
+        System.out.println(listVo.getBoardCode());
+        System.out.println(listVo.getCode());
         BoardEntity boardEntity = this.boardMapper.selectBoard(listVo);
         listVo.setCode(boardEntity.getCode());
         listVo.setName(boardEntity.getName());
