@@ -10,6 +10,7 @@
                `write_forbidden_flag`   AS `isWriteForbidden`,
                `comment_forbidden_flag` AS `CommentForbidden`
         FROM `bbs_test`.`boards`
-        WHERE `code` = {boardCode}
+        WHERE `code` = #{boardCode}
+        LIMIT 1
     </select>
 </mapper>    
